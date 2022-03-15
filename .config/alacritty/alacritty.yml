@@ -5,7 +5,7 @@ key_bindings:
 colors:
   # Default colors
   primary:
-    background: '#272822'
+    background: '#000000'#'#272822'
     foreground: '#F8F8F2'
 
   # Normal colors
