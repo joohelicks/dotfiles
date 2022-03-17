@@ -2,12 +2,13 @@
 
 while true
 do
-  VOL=`pamixer --get-volume || :`
-  TIME=`date '+%H:%M:%S'`
-  BAT0=`cat /sys/class/power_supply/BAT0/capacity || :`
-  BAT1=`cat /sys/class/power_supply/BAT1/capacity || :`
-  BAT=`$(( ( $BAT0 + $BAT1 ) / 2)) || :`
-  xsetroot -name " volume: $VOL% | bat: $BAT% | time: $TIME"
-  sleep 5
+  PKGS=`pacman -Qu | wc -l`
+  MUTED=`pamixer --get-mute`
+
+  UPDATES=`test $PKGS -gt 0 && echo "Updates: $PKGS" || echo ""`
+  VOL=`test $MUTED = true && echo "volume: MUTED" || echo "volume: $(pamixer --get-volume)%"`
+  TIME="time: `date '+%H:%M:%S'`"
+  xsetroot -name "$UPDATES | $VOL | $TIME"
+  sleep 1
 done
 

@@ -1,8 +1,14 @@
-super + Return
-	alacritty
-
 super + shift + l
 	slock
 
 super + e
 	alacritty -e lf
+
+XF86AudioRaiseVolume:
+	pamixer -i 5
+
+XF86AudioLowerVolume:
+	pamixer -d 5
+
+XF86AudioMute:
+	pamixer -t
