@@ -3,6 +3,9 @@ vim.opt.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.relativenumber = true
+vim.o.number = true
+vim.o.number = true
+
 
 vim.g.clipboard = unnamedplus
 vim.opt.mouse = "a"
