@@ -3,9 +3,6 @@ vim.opt.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.relativenumber = true
-vim.o.number = true
-vim.o.number = true
-
 
 vim.g.clipboard = unnamedplus
 vim.opt.mouse = "a"
@@ -39,25 +36,38 @@ mapkey('i', '<c-s>', '<Esc>:w<CR>a', {})
 
 mapkey('n', '<leader>cld', ':LspStop<CR>', {}) -- CodeLintDisable
 mapkey('n', '<leader>cle', ':LspStart<CR>', {}) -- CodeLintEnable
+
 mapkey('n', '<leader>cmc', ':!make<CR>', {}) -- CodeMakeCompile
 mapkey('n', '<leader>cmf', ':!make -B<CR>', {}) -- CodeMakeForce
 
+mapkey('n', '<leader>bb', ':bnext<CR>', {}) -- Change  buffer
 
-
+mapkey('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', {})
+mapkey('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {})
+mapkey('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {})
+mapkey('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {})
+mapkey('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', {})
+mapkey('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', {})
+mapkey('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', {})
+mapkey('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', {})
+mapkey('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', {})
+mapkey('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', {})
+mapkey('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', {})
+mapkey('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', {})
+mapkey('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {})
 
 require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
-	use 'williamboman/nvim-lsp-installer'
 
+	use 'williamboman/nvim-lsp-installer'
 	use 'neovim/nvim-lspconfig'
+
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
-
 	use 'hrsh7th/cmp-vsnip'
 	use 'hrsh7th/vim-vsnip'
-
 	use 'hrsh7th/nvim-cmp'
 
 	use {

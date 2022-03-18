@@ -18,4 +18,4 @@ export PATH=~/.local/bin/:$PATH
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 startx
 fi
-alias gitdf='git --git-dir=/home/user/src/dotfiles --work-tree=/home/user'
+alias gitdf='git --git-dir=/home/$USER/src/dotfiles --work-tree=/home/$USER'
