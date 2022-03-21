@@ -2,7 +2,7 @@
 
 while true
 do
-  PKGS=`pacman -Qu | wc -l`
+  PKGS=`paru -Qu | wc -l`
   MUTED=`pamixer --get-mute`
 
   UPDATES=`test $PKGS -gt 0 && echo "Updates: $PKGS" || echo ""`
