@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# copy dotfiles from repo
+
+DEST="/home/$USER/"
+
+for file in "$@"
+do
+	rsync -vh $file "$DEST$file"
+done
