@@ -3,4 +3,6 @@ vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>',  { no
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>',    { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>',  { noremap = true })
 
+file_ignore_patterns = { "node_modules" }
+
 require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules"} } }
