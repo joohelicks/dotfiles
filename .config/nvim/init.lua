@@ -43,6 +43,14 @@ mapkey('n', '<leader>cmf', ':!make -B<CR>', {}) -- CodeMakeForce
 
 mapkey('n', '<leader>bb', ':bnext<CR>', {}) -- Change  buffer
 
+-- BUFFERS
+
+mapkey('n', '<leader>tn', ':tabnext<CR>', {})
+mapkey('n', '<leader>tt', ':tabnext<CR>', {})
+mapkey('n', '<leader>tp', ':tabprevious<CR>', {})
+mapkey('n', '<leader>tc', ':tabnew<CR>', {})
+mapkey('n', '<leader>tk', ':tabclose<CR>', {})
+
 mapkey('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', {})
 mapkey('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {})
 mapkey('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {})
